@@ -85,7 +85,7 @@
     --border: 217 33% 20%;
   }
 
-  * padding {
+  * {
     @apply border-border;
   }
 
