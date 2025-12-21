@@ -90,7 +90,7 @@
   }
 
   html {
-    @apply scroll-behavior: smooth;
+    @apply scroll-smooth;
   }
 
   body {
