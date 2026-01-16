@@ -3,22 +3,22 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "Audio Wave Painter",
+    description: "A real-time audio-wave painting tool.",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["HTML/CSS", "JavaScript"],
+    demoUrl: "https://ruowen6.github.io/audio-wave-painter/",
+    githubUrl: "https://github.com/ruowen6/audio-wave-painter",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Octopus König misses you",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "A text-based mini love game with COD (Call of Duty): König, but why is he an octopus?",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["TypeScript", "Node.js"],
+    demoUrl: "ruowen6.github.io/konig-octopus/",
+    githubUrl: "https://github.com/ruowen6/konig-octopus",
   },
 ];
 
