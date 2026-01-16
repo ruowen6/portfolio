@@ -3,21 +3,22 @@ import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 
-function App() {
+const basename = import.meta.env.BASE_URL.replace(/\/$/, ""); 
+// dev: "/" → ""（等于不设 basename）
+// prod: "/portfolio/" → "/portfolio"
 
+function App() {
   return (
     <>
       <Toaster />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
-          {/* Add routes here */}
-          {/* element = the pages to render */}
-          <Route index element={<Home/>} />
-          <Route path="*" element={<NotFound/>} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
