@@ -5,7 +5,7 @@ const projects = [
     id: 1,
     title: "Audio Wave Painter",
     description: "A real-time audio-wave painting tool.",
-    image: "/projects/project1.png",
+    image: new URL("../assets/projects/project1.png", import.meta.url).href,
     tags: ["HTML/CSS", "JavaScript"],
     demoUrl: "https://ruowen6.github.io/audio-wave-painter/",
     githubUrl: "https://github.com/ruowen6/audio-wave-painter",
@@ -15,7 +15,7 @@ const projects = [
     title: "Octopus König misses you",
     description:
       "A text-based mini love game with COD (Call of Duty): König, but why is he an octopus?",
-    image: "/projects/project2.png",
+    image: new URL("../assets/projects/project2.png", import.meta.url).href,
     tags: ["TypeScript", "Node.js"],
     demoUrl: "ruowen6.github.io/konig-octopus/",
     githubUrl: "https://github.com/ruowen6/konig-octopus",
