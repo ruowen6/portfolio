@@ -4,31 +4,11 @@ import {
   Mail,
   MapPin,
   Phone,
-  Send,
   Twitch,
   Twitter,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
 
 export const ContactSection = () => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    setIsSubmitting(true);
-
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -41,145 +21,86 @@ export const ContactSection = () => {
           I value every opportunity to connect and learn.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <h3 className="text-2xl font-semibold mb-6">
-              {" "}
-              Contact Information
-            </h3>
-
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Email</h4>
-                  <a
-                    href="mailto:hello@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    ruowen.liu@hotmail.com
-                  </a>
-                </div>
+        <div className="flex flex-col items-center gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
+            {/* Email */}
+            <div className="flex flex-row md:flex-col items-center p-6 bg-card rounded-lg shadow-sm text-left md:text-center gap-4 hover:shadow-md transition-shadow">
+              <div className="p-3 rounded-full bg-primary/10 shrink-0">
+                <Mail className="h-6 w-6 text-primary" />
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Phone</h4>
-                  <a
-                    href="tel:+11234567890"
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +358 (0) 466213136
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />{" "}
-                </div>
-                <div>
-                  <h4 className="font-medium"> Location</h4>
-                  <a className="text-muted-foreground hover:text-primary transition-colors">
-                    Hervanta, Tampere, Finland
-                  </a>
-                </div>
+              <div>
+                <h4 className="font-medium mb-1 md:mb-2">Email</h4>
+                <a
+                  href="mailto:ruowen.liu@hotmail.com"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm break-all"
+                >
+                  ruowen.liu@hotmail.com
+                </a>
               </div>
             </div>
 
-            <div className="pt-8">
-              <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
-                <a href="https://www.linkedin.com/in/liuruowen" target="_blank">
-                  <Linkedin />
+            {/* Phone */}
+            <div className="flex flex-row md:flex-col items-center p-6 bg-card rounded-lg shadow-sm text-left md:text-center gap-4 hover:shadow-md transition-shadow">
+              <div className="p-3 rounded-full bg-primary/10 shrink-0">
+                <Phone className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-medium mb-1 md:mb-2">Phone</h4>
+                <a
+                  href="tel:+358466213136"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  +358 (0) 466213136
                 </a>
-                <a href="#" target="_blank">
-                  <Twitter />
-                </a>
-                <a href="#" target="_blank">
-                  <Instagram />
-                </a>
-                <a href="#" target="_blank">
-                  <Twitch />
-                </a>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="flex flex-row md:flex-col items-center p-6 bg-card rounded-lg shadow-sm text-left md:text-center gap-4 hover:shadow-md transition-shadow">
+              <div className="p-3 rounded-full bg-primary/10 shrink-0">
+                <MapPin className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h4 className="font-medium mb-1 md:mb-2">Location</h4>
+                <span className="text-muted-foreground text-sm block">
+                  Hervanta, Tampere, Finland
+                </span>
               </div>
             </div>
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
-            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
-
-            <form className="space-y-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Ruowen Liu..."
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="rae@gmail.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
-                  {" "}
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
-                  placeholder="Hello, I'd like to talk about..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
-                )}
+          <div className="text-center">
+            <h4 className="font-medium mb-6 text-lg"> Connect With Me</h4>
+            <div className="flex space-x-6 justify-center">
+              <a
+                href="https://www.linkedin.com/in/liuruowen"
+                target="_blank"
+                className="hover:text-primary transition-colors transform hover:scale-110 duration-200"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={16} />
-              </button>
-            </form>
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-primary transition-colors transform hover:scale-110 duration-200"
+              >
+                <Twitter className="h-6 w-6" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-primary transition-colors transform hover:scale-110 duration-200"
+              >
+                <Instagram className="h-6 w-6" />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                className="hover:text-primary transition-colors transform hover:scale-110 duration-200"
+              >
+                <Twitch className="h-6 w-6" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
