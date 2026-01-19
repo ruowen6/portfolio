@@ -3,12 +3,12 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Audio Wave Painter",
-    description: "A real-time audio-wave painting tool.",
+    title: "Pixel Color Editor",
+    description: "An interactive pixel art editor with relational colour transformation.",
     image: "projects/project1.png",
-    tags: ["HTML/CSS", "JavaScript"],
-    demoUrl: "https://ruowen6.github.io/audio-wave-painter/",
-    githubUrl: "https://github.com/ruowen6/audio-wave-painter",
+    tags: ["HTML/CSS", "React", "TypeScript"],
+    demoUrl: "https://ruowen6.github.io/pixel-color-editor/",
+    githubUrl: "https://github.com/ruowen6/pixel-color-editor",
   },
   {
     id: 2,
@@ -16,9 +16,18 @@ const projects = [
     description:
       "A text-based mini love game with COD (Call of Duty): König, but why is he an octopus?",
     image: "projects/project2.png",
-    tags: ["TypeScript", "Node.js"],
+    tags: ["HTML/CSS", "React", "TypeScript"],
     demoUrl: "https://ruowen6.github.io/konig-octopus/",
     githubUrl: "https://github.com/ruowen6/konig-octopus",
+  },
+  {
+    id: 3,
+    title: "Audio Wave Painter",
+    description: "A real-time audio-wave painting tool.",
+    image: "projects/project3.png",
+    tags: ["HTML/CSS", "JavaScript"],
+    demoUrl: "https://ruowen6.github.io/audio-wave-painter/",
+    githubUrl: "https://github.com/ruowen6/audio-wave-painter",
   },
 ];
 
