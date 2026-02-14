@@ -1,6 +1,6 @@
 // src/components/AboutSection.jsx
 import { Briefcase, Code, User } from "lucide-react";
-import cvPdf from "@/assets/Ruowen-Liu-CV1.pdf";
+import cvPdf from "@/assets/Liu-Ruowen-CV2.pdf";
 
 export const AboutSection = () => {
   return (
